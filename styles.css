@@ -2,7 +2,7 @@
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background-image: url('https://github.com/Zyo-yo/letstrythisout/blob/main/background.jpg?raw=true');
+    
     background-color: #fff;
     color: #444;
 }
@@ -57,23 +57,28 @@ header p {
 .retro-title-container {
     text-align: center;
     padding: 120px 20px;
-    background-color: #fefefe;
+    background-color: #ffabcf;
     color: #ff66aa; /* retro pink */
+  
+
 }
 
 .retro-title, 
 .retro-subtitle {
     font-family: "Press Start 2P", cursive;
+
 }
 
 .retro-title {
     font-size: 2rem;
     margin-bottom: 20px;
+    text-shadow: 2px 2px #000;
 }
 
 .retro-subtitle {
     font-size: 1rem;
     color: #555;
+    text-shadow: 2px 2px #FFF;
 }
 
 
@@ -91,15 +96,21 @@ header p {
 /* Retro Subtitle Section */
 .retro-subtitle-section {
     text-align: center;
+    text-shadow: 2px 2px #fff;
     padding: 60px 20px;
     background-color: #fff;
     border-top: 6px solid #ff69b4;
     border-bottom: 6px solid #ffb6c1;
+    background-image: url('https://github.com/Zyo-yo/letstrythisout/blob/main/background.jpg?raw=true');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .retro-subtitle-heading {
     font-family: "Press Start 2P", cursive;
     font-size: 1.3rem;
+    text-shadow: 2px 2px #000;
     color: #ff69b4;
     margin-bottom: 25px;
 }
@@ -108,7 +119,71 @@ header p {
     font-family: "Press Start 2P", cursive;
     font-size: 0.9rem;
     line-height: 1.8;
-    color: #555;
+    color: #1c1c1c;
     max-width: 700px;
     margin: 0 auto;
+}
+
+
+.bubble-bg {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  background: #ffabcf;
+}
+
+/* BASE static repeating circles */
+.retro-title-container {
+  background-image:
+    radial-gradient(circle, #fff 0 6px, transparent 7px),
+    radial-gradient(circle, #ff66aa 0 10px, transparent 11px),
+    radial-gradient(circle, #000 0 4px, transparent 5px),
+    radial-gradient(circle, #fff 0 14px, transparent 15px),
+    radial-gradient(circle, #ff66aa 0 8px, transparent 9px),
+    radial-gradient(circle, #000 0 12px, transparent 13px),
+    radial-gradient(circle, #fff 0 18px, transparent 19px),
+    radial-gradient(circle, #ff66aa 0 20px, transparent 21px);
+  background-size: 180px 180px, 240px 240px, 120px 120px, 300px 300px,
+                   150px 150px, 220px 220px, 350px 350px, 280px 280px;
+  background-repeat: repeat;
+}
+
+/* ANIMATED floaty bubbles */
+.bubble-bg::before,
+.bubble-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-repeat: repeat;
+  pointer-events: none;
+  opacity: 0.6;
+  animation: drift 12s linear infinite;
+}
+
+/* smaller drifting circles */
+.bubble-bg::before {
+  background-image:
+    radial-gradient(circle, #fff 0 10px, transparent 11px),
+    radial-gradient(circle, #ff66aa 0 6px, transparent 7px),
+    radial-gradient(circle, #000 0 4px, transparent 5px);
+  background-size: 160px 160px, 200px 200px, 140px 140px;
+  animation-duration: 18s;
+  animation-direction: alternate;
+}
+
+/* bigger slower ones */
+.bubble-bg::after {
+  background-image:
+    radial-gradient(circle, #fff 0 24px, transparent 25px),
+    radial-gradient(circle, #ff66aa 0 18px, transparent 19px);
+  background-size: 300px 300px, 260px 260px;
+  animation-duration: 28s;
+  opacity: 0.4;
+}
+
+@keyframes drift {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(-40px, -60px); }
+  100% { transform: translate(0, 0); }
 }
