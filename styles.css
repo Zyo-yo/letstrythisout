@@ -98,14 +98,19 @@ header p {
     text-align: center;
     text-shadow: 2px 2px #fff;
     padding: 60px 20px;
-    background-color: #fff;
+    background-color: #ffabcf;
     border-top: 6px solid #ff69b4;
     border-bottom: 6px solid #ffb6c1;
+  /*
     background-image: url('https://github.com/Zyo-yo/letstrythisout/blob/main/background.jpg?raw=true');
     background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-size: contain;
+    background-repeat: round;
+  */
+
 }
+
+
 
 .retro-subtitle-heading {
     font-family: "Press Start 2P", cursive;
@@ -133,8 +138,11 @@ header p {
   background: #ffabcf;
 }
 
+
+
 /* BASE static repeating circles */
-.retro-title-container {
+.retro-title-container,
+.retro-subtitle-section {
   background-image:
     radial-gradient(circle, #fff 0 6px, transparent 7px),
     radial-gradient(circle, #ff66aa 0 10px, transparent 11px),
@@ -148,6 +156,7 @@ header p {
                    150px 150px, 220px 220px, 350px 350px, 280px 280px;
   background-repeat: repeat;
 }
+
 
 /* ANIMATED floaty bubbles */
 .bubble-bg::before,
@@ -187,3 +196,10 @@ header p {
   50% { transform: translate(-40px, -60px); }
   100% { transform: translate(0, 0); }
 }
+
+
+
+
+
+
+
